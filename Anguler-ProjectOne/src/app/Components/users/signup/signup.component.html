@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <!-- we use #NAME to point to anguler ngForm object and not the html form -->
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+
+    <form #myform="ngForm">
+        <h6>Regestration Form</h6>
+        <div class="form-group col-md-6">
+            <label for="firsttName">Name</label>
+            <input ngModel name="name" #name="ngModel" type="text" class="form-control" id="firsttName" placeholder="Name" required [(ngModel)]="newUser.name">
+            <div class="text-danger small" *ngIf="name.invalid && name.touched ">Name is required</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <!-- #password= "ngModel" point to the ngmodel object and not the input -->
+            <input ngModel name="password" #password="ngModel" type="password" class="form-control" id="inputPassword4" placeholder="Password" required minlength="3" [(ngModel)]="newUser.password">
+            <div class="text-danger small" *ngIf="password.touched && password.errors?.['required'] ">Password is required</div>
+            <div class="text-danger small" *ngIf="password.touched && password.errors?.['minlength'] ">Your Password length less than 3 characters</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="confermPassword4">Confarm Password</label>
+            <input ngModel name="passwordconfirm" #passwordconferm="ngModel" tq-validate-after type="password" class="form-control" id="confermPassword4" placeholder="Conferm Password" required>
+            <div class="alert alert-danger" *ngIf="password.touched && passwordconferm.value !== password.value ">Password are not match</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Address</label>
+            <input ngModel name="address" #address="ngModel" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required [(ngModel)]="newUser.addres">
+            <div class="text-danger small" *ngIf="address.invalid && address.touched">Address is required</div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input ngModel name="email" #email="ngModel" type="email" class="form-control" id="inputEmail4" placeholder="Email" required email [(ngModel)]="newUser.email">
+            <div class="text-danger small" *ngIf="email.touched && email.errors?.['required'] ">Email is required</div>
+            <div class="text-danger small" *ngIf="email.touched && email.errors?.['email'] ">Your email does not match email form</div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="contactNumber">Contact</label>
+            <input ngModel name="contact" #contact="ngModel" type="tel" class="form-control" id="contactNumber" placeholder="Contact Number" required [(ngModel)]="newUser.contact">
+            <div class="text-danger small" *ngIf="contact.invalid && contact.touched">Contact is required</div>
+
+            <!-- <div class="form-group col-md-6">
+                <label for="inputName">Type</label>
+
+                <select ngModel name="type" #type="ngModel" class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="newUser.usertype_id">
+        <option selected>Choose Type</option>
+        <option *ngFor="let emptype of employeeType" [value]=emptype.Id>{{emptype.Name}}</option>
+      </select>
+            </div> -->
+        </div>
+        <!-- [disabled]="myform.invalid make the form invalid -->
+        <button type="submit" class="btn btn-primary" [disabled]="myform.invalid || password.value !== passwordconferm.value" (click)="signup()">Sign in</button>
+    </form>
+</div>

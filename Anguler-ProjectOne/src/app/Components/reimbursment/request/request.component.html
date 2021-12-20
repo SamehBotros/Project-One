@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<div class="container mt-3">
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+
+    <form #myform="ngForm" (submit)="addRequest()">
+        <h2>Make Request</h2>
+
+        <div class="form-group col-md-6">
+            <label for="formGroupExampleInput">Request Name</label>
+            <input name="req_name" #reqname="ngModel" type="text" class="form-control" id="formGroupExampleInput" placeholder="Request Name" required [(ngModel)]="requestForm.req_name">
+            <div class="text-danger small" *ngIf="reqname.invalid && reqname.touched">Request Name is required</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Price</label>
+            <input name="price" #reqprice="ngModel" type="text" class="form-control" id="formGroupExampleInput2" placeholder="price" required [(ngModel)]="requestForm.req_price">
+            <div class="text-danger small" *ngIf="reqprice.invalid && reqprice.touched">Price is required</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Request Description</label>
+            <input name="description" #descript="ngModel" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Description" required [(ngModel)]="requestForm.req_description">
+            <div class="text-danger small" *ngIf="descript.invalid && descript.touched">Request Name is required</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Receipt Img</label>
+            <input name="Img" #name="ngModel" type="text" class="form-control" id="formGroupExampleInput2" placeholder="url" [(ngModel)]="requestForm.img">
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary" [disabled]="myform.invalid">Submit</button>
+            <button type="reset" class="btn btn-primary" id="buttunclear">Clear</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<div class="container mt-3">
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+    <form #signInForm="ngForm" (submit)="validataLogin()">
+        <div class="form-group col-md-4">
+            <label for="firsttName">Name</label>
+            <input name="name" #name="ngModel" type="text" class="form-control" id="Name" placeholder="User Name" required autofocus [(ngModel)]="newUser.name">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputPassword4">Password</label>
+            <!-- #password= "ngModel" point to the ngmodel object and not the input -->
+            <input name="password" #password="ngModel" type="password" class="form-control" id="inputPassword" placeholder="Password" required autofocus minlength="3" [(ngModel)]="newUser.password">
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" mat-raised-button color="primary" [disabled]="signInForm.invalid">Login</button>
+        </div>
+
+    </form>
+</div>

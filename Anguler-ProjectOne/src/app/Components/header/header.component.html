@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">SB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item" *ngIf="!retrieveIsLoggedIn()">
+                    <a class="nav-link" routerLink="login" routerLinlActive="active">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="/home" routerLinlActive="active"> Home</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'EMPLOYEE' ">
+                    <a class="nav-link" routerLink="/request" routerLinlActive="active">Make Request</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'EMPLOYEE'   ">
+                    <a class="nav-link" routerLink="/user-pending-request" routerLinlActive="active">Pending Requests</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'EMPLOYEE'  ">
+                    <a class="nav-link" routerLink="/user-resolved-request" routerLinlActive="active">Resolved Requests</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'EMPLOYEE'  ">
+                    <a class="nav-link" routerLink="/user-profile" routerLinlActive="active">Profile</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'MANAGER'  ">
+                    <a class="nav-link" routerLink="/all-Pending-Request" routerLinlActive="active">Pending Requests</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'MANAGER' ">
+                    <a class="nav-link" routerLink="/all-resolved-request" routerLinlActive="active">Resolved Requests</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'MANAGER' ">
+                    <a class="nav-link" routerLink="/specific-request" routerLinlActive="active">Specific request</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'MANAGER' ">
+                    <a class="nav-link" routerLink="/approve-request" routerLinlActive="active">Approver request</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'MANAGER' ">
+                    <a class="nav-link" routerLink="/all-employee" routerLinlActive="active">All Employees</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn() && retrieveUserType() == 'MANAGER'">
+                    <a class="nav-link" routerLink="/signup" routerLinlActive="active">Registration</a>
+                </li>
+                <li class="nav-item" *ngIf="retrieveIsLoggedIn()">
+                    <button class="btn btn-danger" routerLink="/logout">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

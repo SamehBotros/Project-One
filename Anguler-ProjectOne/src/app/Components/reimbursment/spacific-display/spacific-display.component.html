@@ -1,0 +1,29 @@
+<div class="container mt-3">
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+    <h4>Specific Request</h4>
+
+    <div class="container mt-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Request Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Request Date</th>
+                    <th>Receipt Img</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let request of newRequest">
+                    <td>{{request.id}}</td>
+                    <td>{{request.req_name}}</td>
+                    <td>{{request.req_price }}</td>
+                    <td>{{request.req_description }}</td>
+                    <td>{{request.req_date | date: "MM/dd/yyyy"}}</td>
+                    <td><img [src]="request.img" height="50px" width="80px" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

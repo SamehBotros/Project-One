@@ -1,0 +1,105 @@
+:root {
+    /* variable custom property: ;
+    * var(custom property, Folback value)
+    * Folback value color just in case you didn;t find the custom property
+    */
+    --main--color: #0aac3b;
+}
+
+.contaner {
+    width: 1200px;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer {
+    background-color: #232323;
+    color: #6c6c6c;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.footer .col,
+.footer .tags {
+    width: 25%;
+    float: left;
+}
+
+.footer .col h2 {
+    color: #6c6c6c;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer .col p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    margin-right: 5%;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.footer .col .fabwasom {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 5px;
+    color: #6c6c6c;
+    border: 1px solid #6c6c6c;
+    text-align: center;
+    padding: 5px;
+}
+
+.footer .col .fabwasom a {
+    color: #6c6c6c;
+}
+
+.footer .copyright {
+    margin-top: 50px;
+    font-size: 10px;
+    color: #6c6c6c;
+}
+
+.footer .tags span {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 7px;
+    color: #6c6c6c;
+    border: 1px solid #6c6c6c;
+    text-align: center;
+    padding: 5px;
+}
+
+.footer .resent div {
+    float: left;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.footer .resent>div img {
+    width: 80px;
+    float: left;
+    margin-right: 10px;
+}
+
+.footer .resent div h4 {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .resent div span {
+    display: block;
+    padding-top: 30px;
+}
+
+.footer .blog ul li {
+    padding: 15px;
+    border-bottom: 1px solid #EEE;
+}

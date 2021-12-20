@@ -1,0 +1,29 @@
+<div class="container mt-3">
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+    <h4>Pending Request</h4>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let viewUsers of newUser">
+                <td>{{viewUsers.id}} </td>
+                <td>{{viewUsers.name}}</td>
+                <td>{{viewUsers.email}}</td>
+                <td>{{viewUsers.addres}}</td>
+                <td>{{viewUsers.contact}}</td>
+                <td>{{viewUsers.usertype_id}}</td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>

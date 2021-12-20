@@ -1,0 +1,55 @@
+<div class="container mt-3">
+    <!-- we use #NAME to point to anguler ngForm object and not the html form -->
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+
+    <form #myform="ngForm">
+        <h2>Edit Profile</h2>
+        <h5 class="text-danger my-2">{{errorMsg}}</h5>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Your ID #</label> {{newUser.id}}
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input name="name" #name="ngModel" type="text" class="form-control" id="name" placeholder={{newUser.name}}required [(ngModel)]="newUser.name">
+            <div class="alert alert-danger" *ngIf="name.invalid && name.touched ">Name is required</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <!-- #password= "ngModel" point to the ngmodel object and not the input -->
+            <input name="password" #password="ngModel" type="password" class="form-control" id="inputPassword4" placeholder={{newUser.password}} required minlength="3" [(ngModel)]="newUser.password">
+            <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['required'] ">Password is required</div>
+            <div class="alert alert-danger" *ngIf="password.errors?.['minlength'] ">Your Password length should be more than 3 characters</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="confermPassword4">Confarm Password</label>
+            <input ngModel name="passwordconfirm" #passwordconferm="ngModel" type="password" class="form-control" id="confermPassword4" placeholder="Conferm Password" required>
+            <div class="alert alert-danger" *ngIf="password.touched && passwordconferm.value !== password.value ">Password are not match</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Address</label>
+            <input name="address" #address="ngModel" type="text" class="form-control" id="inputAddress" placeholder={{newUser.addres}} required [(ngModel)]="newUser.addres">
+            <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Address is required</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input name="email" #email="ngModel" type="email" class="form-control" id="inputEmail4" placeholder={{newUser.email}} required email [(ngModel)]="newUser.email">
+            <div class="alert alert-danger" *ngIf="email.touched &&
+            email.errors?.['required'] ">Email is required</div>
+            <div class="alert alert-danger" *ngIf="email.touched &&
+            email.errors?.['email'] ">Your email does not match email form</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="contactNumber">Contact</label>
+            <input name="contact" #contact="ngModel" type="text" class="form-control" id="contactNumber" placeholder={{newUser.contact}} required [(ngModel)]="newUser.contact">
+            <div class="alert alert-danger" *ngIf="contact.invalid && contact.touched">Contact is required</div>
+        </div>
+        <!-- [disabled]="myform.invalid make the form invalid -->
+        <div class="form-group col-md-6">
+
+            <button type="submit" mat-raised-button color="primary" [disabled]="myform.invalid || password.value !== passwordconferm.value" (click)="updateUserInfo()">Sign in</button>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="container mt-3">
+    <!-- we use #NAME to point to anguler ngForm object and not the html form -->
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+
+    <form #myform="ngForm">
+        <h2>User Profile</h2>
+        <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
+                <label for="firsttName">Your ID #</label> {{ newUser.id }}
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input ngModel name="name" #name="ngModel" type="text" class="form-control" disabled id="name" placeholder={{newUser.name}}>
+        </div>
+        <div class="form-group  col-md-6">
+            <label for="inputAddress">Address</label>
+            <input ngModel name="address" #address="ngModel" type="text" class="form-control" disabled id="inputAddress" placeholder={{newUser.addres}}>
+        </div>
+
+        <div class="form-group  col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input ngModel name="email" #email="ngModel" type="email" class="form-control" disabled id="inputEmail4" placeholder={{newUser.email}}>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="contactNumber">Contact</label>
+            <input ngModel name="contact" #contact="ngModel" type="text" class="form-control" disabled id="contactNumber" placeholder={{newUser.contact}}>
+        </div>
+        <div class="form-group col-md-6">
+            <button type="button" mat-raised-button color="primary" (click)="editProf()">Go To Edit</button>
+        </div>
+    </form>
+    <h5 class="text-danger my-2">{{errorMsg}}</h5>
+
+</div>

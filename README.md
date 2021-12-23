@@ -32,33 +32,36 @@ As a Manager:
 7.	Can view all employee
 8.	Can register an employee 
 
-Technologies Used   
+Technologies Used  
+---
 Java, Maven, JavaLin, Logging, Ajax, Postman ,PostgreSQL, JUnit, Log4J, HTML, CSS, Angular
 
 Environmentes  
+---
 Eclipse IDE and Visual Studio
 
 Getting Started
+---
 How to install the Project
 
-Open the GitHub Link https://github.com/SamehBotros/Project-One.git and then extract all folders
+Open the GitHub Link [github](https://github.com/SamehBotros/Project-One.git) and then extract all folders
 *  For Angular 
 1.	Open the CLI or Terminal and choose the angular folder
 2.	Write the command  ` npm install `
 3.	After the installation write the command > ng serve
 *  For Java : 
 1.	Open the folder on your IDE
-2.	Open file RequestControlerMain.java
+2.	Open file `RequestControlerMain.java`
 3.	Run the Javalin 4 server
 *  For PostgreSQL :
 1.	From the Java folder open the file dbscript.sql on any editor 
-2.	Open the Postgres CLI and create database name reimbursement
+2.	Open the Postgres CLI and create database name `reimbursement`
 3.	Inside the reimbursement start copy and past from file dbscript.sql file as the same order
 
 Usage
 ---
 To use the project you 
-1.	Go to browser and write http://localhost:4200/ 
+1.	From browser open the link http://localhost:4200/ or add your port number
 2.	Chooser Login from the menu bar to enter as Employee (user name = sam , password =123) and as Manager(user name = joe , password =456)
 3.	As an employee you can make request , see your pending requests, see your resolved request, see your profile and edit your profile  
 4.	As a manager you can make request , see all pending requests, see your all resolved request, see specific employee request, approve or reject requests , see all the employee information and add new employee
